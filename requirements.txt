@@ -1,0 +1,17 @@
+# ==============================================================================
+# SnapTail3D - Dependências do Sistema
+# ==============================================================================
+# O software possui arquitetura híbrida tolerante a dependências:
+# - Modo Básico / Standalone: Funciona nativamente com a biblioteca padrão do
+#   Python 3.8+ (incluindo tkinter). Nenhuma instalação adicional é obrigatória.
+# - Modo Kernel CAD 3D B-Rep (OpenCASCADE): Dependências abaixo para cálculo
+#   booleano de sólidos 3D complexos e operações CAD avançadas.
+# ==============================================================================
+
+# Kernel CAD Paramétrico e B-Rep (OpenCASCADE Python wrapper)
+cadquery>=2.3.0
+
+# Opcionais para testes avançados, lint e tipagem
+pytest>=7.0.0
+mypy>=1.0.0
+
