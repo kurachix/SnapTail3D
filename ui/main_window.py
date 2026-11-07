@@ -27,7 +27,7 @@ class DovetailStudioWindow(tk.Tk):
 
     def __init__(self) -> None:
         super().__init__()
-        self.title("SnapTail3D — Dovetail Studio 3D | Corte Interativo com Encaixes Mecânicos")
+        self.title("snaptail3D | Corte Interativo com Encaixes Mecânicos")
         self.geometry("1260x780")
         self.minsize(1024, 680)
         self.configure(bg=THEME.BG_MAIN)
@@ -77,7 +77,7 @@ class DovetailStudioWindow(tk.Tk):
         # Logo & Título
         logo_badge = tk.Label(
             header,
-            text=" ◆ SNAPTAIL 3D ",
+            text=" ◆ SNAPTAIL3D ",
             bg=THEME.ACCENT_CYAN,
             fg=THEME.BG_MAIN,
             font=(THEME.FONT_FAMILY, 10, "bold"),
@@ -88,7 +88,7 @@ class DovetailStudioWindow(tk.Tk):
 
         tk.Label(
             header,
-            text="DOVETAIL STUDIO 3D",
+            text="STUDIO",
             bg=THEME.BG_PANEL,
             fg=THEME.TEXT_PRIMARY,
             font=(THEME.FONT_FAMILY, 11, "bold"),

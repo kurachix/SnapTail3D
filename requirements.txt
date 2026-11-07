@@ -1,5 +1,5 @@
 # ==============================================================================
-# SnapTail3D - Dependências do Sistema
+# snaptail3D - Dependências do Sistema
 # ==============================================================================
 # O software possui arquitetura híbrida tolerante a dependências:
 # - Modo Básico / Standalone: Funciona nativamente com a biblioteca padrão do

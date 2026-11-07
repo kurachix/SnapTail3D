@@ -1,5 +1,5 @@
 """
-Ponto de Entrada Principal — SnapTail3D / Dovetail Studio 3D.
+Ponto de Entrada Principal — snaptail3D.
 Na raiz do repositório permanece apenas este orquestrador `main.py` (e a documentação),
 enquanto cada papel do sistema está isolado em sua respectiva pasta:
   - config/     : Governança de Regras de Negócio (RN01-RN12) e Perfis de Impressora
@@ -45,7 +45,7 @@ def run_headless_demo(output_dir: str) -> int:
     grip_res = generate_grip_test_coupom(params)
     bundle_grip = export_cut_pieces(grip_res, "MiniTeste_Grip_Calibracao", output_dir, params, None)
 
-    print("=== SnapTail3D — Exportação Headless Concluída ===")
+    print("=== snaptail3D — Exportação Headless Concluída ===")
     print(f"Peça cortada ({cut_res.report.num_active_teeth} dentes ativos):")
     print(f"  - {bundle_part.stl_a_path}")
     print(f"  - {bundle_part.stl_b_path}")
@@ -68,7 +68,7 @@ def launch_studio_gui() -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="SnapTail3D — Software Interativo de Corte 3D com Encaixes Mecânicos (Dovetail Studio)"
+        description="snaptail3D — Software Interativo de Corte 3D com Encaixes Mecânicos"
     )
     parser.add_argument(
         "--test",

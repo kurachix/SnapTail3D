@@ -155,7 +155,7 @@ def _extrude_polygon_to_triangles(half: CutSolidHalf) -> List[Triangle3D]:
 def _write_binary_stl(half: CutSolidHalf, target_path: Path) -> None:
     """Escreve um arquivo .STL binário padrão IEEE 754 pronto para Bambu Studio / OrcaSlicer."""
     triangles = _extrude_polygon_to_triangles(half)
-    header = f"SnapTail3D Dovetail Studio - Half {half.label} (Z=0 mm)".encode("ascii")
+    header = f"snaptail3D - Half {half.label} (Z=0 mm)".encode("ascii")
     header = header.ljust(80, b"\x00")[:80]
 
     with target_path.open("wb") as f:
@@ -193,8 +193,8 @@ def _write_native_step_ap214(half: CutSolidHalf, part_name: str, target_path: Pa
     lines = [
         "ISO-10303-21;",
         "HEADER;",
-        f"FILE_DESCRIPTION(('SnapTail3D Dovetail Studio - Metade {half.label}'),'2;1');",
-        f"FILE_NAME('{target_path.name}','{timestamp}',('SnapTail3D'),('Engineering Studio'),'SnapTail3D 2.0','SnapTail3D Kernel','');",
+        f"FILE_DESCRIPTION(('snaptail3D - Metade {half.label}'),'2;1');",
+        f"FILE_NAME('{target_path.name}','{timestamp}',('snaptail3D'),('Engineering Studio'),'snaptail3D 2.0','snaptail3D Kernel','');",
         "FILE_SCHEMA(('AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }'));",
         "ENDSEC;",
         "DATA;",
@@ -295,7 +295,7 @@ def export_cut_pieces(
     # Salva relatório de engenharia JSON (Rastreabilidade e Auditoria das RNs)
     rep = cut_result.report
     report_payload = {
-        "software": "SnapTail3D — Dovetail Studio 3D",
+        "software": "snaptail3D",
         "timestamp": datetime.now().isoformat(),
         "part_name": base_part_name,
         "original_source_preserved": True,

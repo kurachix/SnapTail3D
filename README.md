@@ -1,6 +1,6 @@
-# SnapTail3D (Dovetail Studio 3D)
+# snaptail3D
 
-**SnapTail3D** é um software de engenharia interativo projetado para dividir peças estruturais para impressão 3D (FDM) utilizando **encaixes mecânicos *rabo de andorinha* (*dovetail*) contínuos, com alívio de tensões e proteção de integridade funcional**.
+**snaptail3D** é um software de engenharia interativo projetado para dividir peças estruturais para impressão 3D (FDM) utilizando **encaixes mecânicos *rabo de andorinha* (*dovetail*) contínuos, com alívio de tensões e proteção de integridade funcional**.
 
 O software resolve o problema físico de imprimir peças maiores que o volume útil da mesa (ex.: Bambu Lab A1/P1S/X1C, Ender 3, Prusa MK4), gerando juntas com travamento mecânico positivo (*undercut*), cantos arredondados tangentes ($C^1$), desvio inteligente de furos e exportação sincronizada `.STL` e `.STEP` para fabricação e CAD.
 
@@ -28,8 +28,8 @@ O projeto segue os princípios de separação estrita de responsabilidades (SoC)
 ```
 SnapTail3D/
 ├── main.py                      # Ponto de entrada (GUI, testes e headless CLI)
-├── Documentacao_Software_Corte_3D.md # Especificação técnica completa (RN01 a RN12, LF01 a LF07)
 ├── README.md                    # Manual do usuário e documentação de uso
+├── requirements.txt             # Dependências do sistema
 ├── .gitignore                   # Regras de exclusão de arquivos e diretórios
 ├── config/                      # Governança de parâmetros, limites e perfis de impressoras
 │   ├── settings.py
@@ -67,7 +67,7 @@ SnapTail3D/
 
 O software foi construído de forma **híbrida e autocontida**:
 - **Interface e Núcleo Geométrico:** Funciona nativamente com **Python 3.8+** (utilizando `tkinter`, biblioteca padrão).
-- **Kernel CAD 3D Avançado (Opcional):** Se o pacote `cadquery` estiver instalado, o software utiliza o kernel B-Rep do OpenCASCADE para operações booleanas analíticas complexas e exportação `.step` nativa. Caso não esteja instalado, o gerador nativo do SnapTail3D assume com triangulação Ear-Clipping e conversor AP214 sem interromper o fluxo.
+- **Kernel CAD 3D Avançado (Opcional):** Se o pacote `cadquery` estiver instalado, o software utiliza o kernel B-Rep do OpenCASCADE para operações booleanas analíticas complexas e exportação `.step` nativa. Caso não esteja instalado, o gerador nativo do snaptail3D assume com triangulação Ear-Clipping e conversor AP214 sem interromper o fluxo.
 
 ### Instalação rápida:
 
